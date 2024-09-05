@@ -10,7 +10,7 @@ class retriever:
     def __init__(self):
         response = json.loads((requests.get("https://opentdb.com/api_token.php?command=request")).content.decode())
         self.token = response["token"]
-        print(f"Token: {self.token}")
+        #print(f"Token: {self.token}")
     
     def getScienceAndNat(self, num = 1):
         response = json.loads((requests.get(f"https://opentdb.com/api.php?amount={num}&category=17&token={self.token}")).content.decode())
